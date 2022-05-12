@@ -18,8 +18,11 @@
 
     Private Sub ValidButton_Click(sender As Object, e As EventArgs) Handles ValidButton.Click
         If NomCbx.Text.Length <= 2 Then
+            MsgBox("Le nom de joueur doit au moins contenir 3 caractères", MsgBoxStyle.Critical)
         Else
             Me.Hide()
+            Minesweeper.Activate()
+
             Minesweeper.Show()
         End If
     End Sub

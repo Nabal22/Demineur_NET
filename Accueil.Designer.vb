@@ -62,7 +62,7 @@ Partial Class Accueil
         Me.FormButton.Name = "FormButton"
         Me.FormButton.Size = New System.Drawing.Size(94, 47)
         Me.FormButton.TabIndex = 3
-        Me.FormButton.Text = "Formulaire"
+        Me.FormButton.Text = "Score"
         Me.FormButton.UseVisualStyleBackColor = True
         '
         'Accueil
