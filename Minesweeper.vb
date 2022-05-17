@@ -24,7 +24,6 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If temps >= 0 Then
-
             TimeLabel.Text = temps
             temps = temps - 1
         End If
@@ -36,19 +35,24 @@
 
     Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Main()
-        For i As Integer = 0 To 8
-            For j As Integer = 0 To 8
-                LayoutPanel.Controls.Add(New Button, i, j)
+        For i As Integer = 0 To 7
+            For j As Integer = 0 To 7
+                Dim newBtn As Button = New Button
+                AddHandler newBtn.Click, AddressOf Test
+                LayoutPanel.Controls.Add(newBtn, i, j)
             Next
         Next
 
     End Sub
 
-    Private Sub LayoutPanel_Click(sender As Object, e As EventArgs) Handles LayoutPanel.Click
-        LayoutPanel.
-        Console.WriteLine(LayoutPanel.GetRow(sender))
-
-
+    Private Sub Test(sender As Object, e As EventArgs)
+        Dim row = LayoutPanel.GetRow(sender)
+        Dim col = LayoutPanel.GetColumn(sender)
+        If isAMine(row, col) = True Then
+            sender.BackColor = Color.Red
+        End If
+        ''' reste plus qu'a mettre le code du démineur
+        ''' 
     End Sub
 
 End Class

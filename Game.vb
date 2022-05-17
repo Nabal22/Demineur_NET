@@ -6,7 +6,7 @@
     Sub Main()
         Dim xTmp, yTmp As Integer
         '' on intialise le tableau
-        For index As Integer = 0 To 10
+        For index As Integer = 0 To 9
             xTmp = random.Next(0, 8)
             yTmp = random.Next(0, 8)
             While isAMine(xTmp, yTmp)
