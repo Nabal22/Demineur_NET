@@ -1,6 +1,6 @@
 ﻿Public Class Minesweeper
     Dim temps As Integer = 64
-
+    Dim tab(,) As Boolean
     Private Sub Minesweeper_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Timer1.Stop()
         If MsgBox("Voulez-vous vraiment quitter la partie ?", MsgBoxStyle.YesNo, "Fermeture du programme") = MsgBoxResult.No Then
@@ -15,7 +15,6 @@
         Timer1.Start()
         TimeLabel.Text = temps
         NameLabel.Text = Accueil.NomCbx.Text
-
     End Sub
 
     Private Sub LeaveButton_Click(sender As Object, e As EventArgs) Handles LeaveButton.Click
@@ -38,21 +37,20 @@
         For i As Integer = 0 To 7
             For j As Integer = 0 To 7
                 Dim newBtn As Button = New Button
-                AddHandler newBtn.Click, AddressOf Test
+                AddHandler newBtn.Click, AddressOf ClicOnBtn
                 LayoutPanel.Controls.Add(newBtn, i, j)
             Next
         Next
-
     End Sub
 
-    Private Sub Test(sender As Object, e As EventArgs)
+    Private Sub ClicOnBtn(sender As Object, e As EventArgs)
         Dim row = LayoutPanel.GetRow(sender)
         Dim col = LayoutPanel.GetColumn(sender)
         If isAMine(row, col) = True Then
             sender.BackColor = Color.Red
         End If
+
         ''' reste plus qu'a mettre le code du démineur
         ''' 
     End Sub
-
 End Class

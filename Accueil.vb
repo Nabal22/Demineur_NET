@@ -30,4 +30,9 @@
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         Me.Close()
     End Sub
+
+    Private Sub SettingBtn_Click(sender As Object, e As EventArgs) Handles SettingBtn.Click
+        Me.Hide()
+        Setting.Show()
+    End Sub
 End Class

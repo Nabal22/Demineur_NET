@@ -26,12 +26,13 @@ Partial Class Accueil
         Me.ValidButton = New System.Windows.Forms.Button()
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.FormButton = New System.Windows.Forms.Button()
+        Me.SettingBtn = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'NomCbx
         '
         Me.NomCbx.FormattingEnabled = True
-        Me.NomCbx.Location = New System.Drawing.Point(300, 128)
+        Me.NomCbx.Location = New System.Drawing.Point(303, 150)
         Me.NomCbx.Name = "NomCbx"
         Me.NomCbx.Size = New System.Drawing.Size(164, 21)
         Me.NomCbx.TabIndex = 0
@@ -65,11 +66,21 @@ Partial Class Accueil
         Me.FormButton.Text = "Score"
         Me.FormButton.UseVisualStyleBackColor = True
         '
+        'SettingBtn
+        '
+        Me.SettingBtn.Location = New System.Drawing.Point(338, 356)
+        Me.SettingBtn.Name = "SettingBtn"
+        Me.SettingBtn.Size = New System.Drawing.Size(94, 47)
+        Me.SettingBtn.TabIndex = 4
+        Me.SettingBtn.Text = "Réglages"
+        Me.SettingBtn.UseVisualStyleBackColor = True
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.SettingBtn)
         Me.Controls.Add(Me.FormButton)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.ValidButton)
@@ -84,4 +95,5 @@ Partial Class Accueil
     Friend WithEvents ValidButton As Button
     Friend WithEvents QuitButton As Button
     Friend WithEvents FormButton As Button
+    Friend WithEvents SettingBtn As Button
 End Class

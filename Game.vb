@@ -1,9 +1,10 @@
 ﻿Module Game
-    Dim tab(8, 8) As Boolean ''true si mine sinon false
-    ''initialisaton du tableau
-    Dim random As Random = New Random()
 
+    Dim tab(8, 8) As Boolean
     Sub Main()
+        Console.WriteLine("test dans game" & Setting.getRowAndCollumnValue())
+
+        Dim random As Random = New Random()
         Dim xTmp, yTmp As Integer
         '' on intialise le tableau
         For index As Integer = 0 To 9
@@ -22,12 +23,17 @@
                 Console.Write(tab(i, j))
             Next
         Next
-
     End Sub
 
-
-    Function isAMine(x As Integer, y As Integer) As Boolean
-        Return tab(x, y)
+    Function isAMine(row As Integer, col As Integer) As Boolean
+        Return tab(row, col)
     End Function
 
+    Function mineAround(row As Integer, col As Integer) As Integer
+        Dim nbMinesAround As Integer = 0
+        ''pas de case à gauche
+
+        '' pas de case à 
+
+    End Function
 End Module
