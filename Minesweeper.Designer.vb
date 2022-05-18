@@ -54,7 +54,7 @@ Partial Class Minesweeper
         Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.LayoutPanel.Size = New System.Drawing.Size(507, 335)
+        Me.LayoutPanel.Size = New System.Drawing.Size(531, 335)
         Me.LayoutPanel.TabIndex = 0
         '
         'Timer1
@@ -71,7 +71,7 @@ Partial Class Minesweeper
         '
         'LeaveButton
         '
-        Me.LeaveButton.Location = New System.Drawing.Point(713, 18)
+        Me.LeaveButton.Location = New System.Drawing.Point(609, 18)
         Me.LeaveButton.Name = "LeaveButton"
         Me.LeaveButton.Size = New System.Drawing.Size(75, 23)
         Me.LeaveButton.TabIndex = 2
@@ -100,7 +100,7 @@ Partial Class Minesweeper
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(718, 450)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TimeLabel)
         Me.Controls.Add(Me.LeaveButton)

@@ -6,6 +6,7 @@
         If MsgBox("Voulez-vous vraiment quitter la partie ?", MsgBoxStyle.YesNo, "Fermeture du programme") = MsgBoxResult.No Then
             e.Cancel = True
         Else
+            setStateOfGame(True)
             Accueil.Show()
         End If
     End Sub
@@ -27,16 +28,20 @@
             temps = temps - 1
         End If
         If temps = 0 Then
+            setStateOfGame(True)
             MsgBox("temps écoulé")
             Me.Close()
         End If
     End Sub
 
     Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Main()
-        For i As Integer = 0 To 7
-            For j As Integer = 0 To 7
+        Dim dimRowAndCollumn As Integer = 8, nbMines As Integer = 20
+        Main(dimRowAndCollumn, nbMines)
+        For i As Integer = 0 To dimRowAndCollumn - 1
+            For j As Integer = 0 To dimRowAndCollumn - 1
                 Dim newBtn As Button = New Button
+                newBtn.Width = 25
+                newBtn.Height = 25
                 AddHandler newBtn.Click, AddressOf ClicOnBtn
                 LayoutPanel.Controls.Add(newBtn, i, j)
             Next
@@ -44,11 +49,15 @@
     End Sub
 
     Private Sub ClicOnBtn(sender As Object, e As EventArgs)
+
         Dim row = LayoutPanel.GetRow(sender)
         Dim col = LayoutPanel.GetColumn(sender)
         If isAMine(row, col) = True Then
             sender.BackColor = Color.Red
         End If
+
+
+        Console.WriteLine(mineAround(row, col))
 
         ''' reste plus qu'a mettre le code du démineur
         ''' 
