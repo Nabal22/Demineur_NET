@@ -23,12 +23,16 @@ Partial Class Minesweeper
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Minesweeper))
         Me.LayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.LeaveButton = New System.Windows.Forms.Button()
         Me.TimeLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PauseButton = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutPanel
@@ -96,11 +100,33 @@ Partial Class Minesweeper
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Label1"
         '
+        'PauseButton
+        '
+        Me.PauseButton.Location = New System.Drawing.Point(528, 18)
+        Me.PauseButton.Name = "PauseButton"
+        Me.PauseButton.Size = New System.Drawing.Size(75, 23)
+        Me.PauseButton.TabIndex = 5
+        Me.PauseButton.Text = "Pause"
+        Me.PauseButton.UseVisualStyleBackColor = True
+        Me.PauseButton.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(1, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 41)
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
+        '
         'Minesweeper
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(718, 450)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PauseButton)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TimeLabel)
         Me.Controls.Add(Me.LeaveButton)
@@ -108,6 +134,7 @@ Partial Class Minesweeper
         Me.Controls.Add(Me.LayoutPanel)
         Me.Name = "Minesweeper"
         Me.Text = "Minesweeper"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -119,4 +146,6 @@ Partial Class Minesweeper
     Friend WithEvents LeaveButton As Button
     Friend WithEvents TimeLabel As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents PauseButton As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

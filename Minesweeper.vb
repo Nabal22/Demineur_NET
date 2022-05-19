@@ -1,12 +1,21 @@
-﻿Public Class Minesweeper
+﻿Imports System.IO
+
+Public Class Minesweeper
     Const cellHeightWidth = 25
+
+    Private pause As Boolean
+    Private estPause As Boolean = False
+    Private timePause As Integer = 0
 
     Dim temps As Integer = 64
     Dim tab(,) As Boolean
+
     Private Sub Minesweeper_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Timer1.Stop()
+        LayoutPanel.Visible = False
         If MsgBox("Voulez-vous vraiment quitter la partie ?", MsgBoxStyle.YesNo, "Fermeture du programme") = MsgBoxResult.No Then
             e.Cancel = True
+            LayoutPanel.Visible = True
         Else
             setStateOfGame(True)
             Accueil.Show()
@@ -25,6 +34,9 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If estPause = False Then
+            timePause += 1
+        End If
         If temps >= 0 Then
             TimeLabel.Text = temps
             temps = temps - 1
@@ -48,6 +60,15 @@
                 LayoutPanel.Controls.Add(newBtn, i, j)
             Next
         Next
+
+        Dim file As New StreamReader("config.txt")
+        file.ReadLine()
+        pause = file.ReadLine()
+        If pause = True Then
+            PauseButton.Visible = True
+        Else
+        PauseButton.Visible = False
+        End If
     End Sub
 
     Private Sub ClicOnBtn(sender As Object, e As EventArgs)
@@ -67,6 +88,20 @@
                 newLabel.TextAlign = ContentAlignment.MiddleCenter
                 LayoutPanel.Controls.Add(newLabel, col, row)
             End If
+        End If
+
+    End Sub
+
+    Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
+        If estPause = True Then
+            Timer1.Start()
+            LayoutPanel.Visible = True
+            estPause = False
+        ElseIf estPause = False And timePause > 3 Then
+            Timer1.Stop()
+            LayoutPanel.Visible = False
+            estPause = True
+            timePause = 0
         End If
 
     End Sub

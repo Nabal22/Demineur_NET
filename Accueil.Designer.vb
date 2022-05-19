@@ -22,11 +22,14 @@ Partial Class Accueil
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Accueil))
         Me.NomCbx = New System.Windows.Forms.ComboBox()
         Me.ValidButton = New System.Windows.Forms.Button()
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.FormButton = New System.Windows.Forms.Button()
         Me.SettingBtn = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NomCbx
@@ -75,11 +78,22 @@ Partial Class Accueil
         Me.SettingBtn.Text = "Réglages"
         Me.SettingBtn.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, -1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 41)
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.SettingBtn)
         Me.Controls.Add(Me.FormButton)
         Me.Controls.Add(Me.QuitButton)
@@ -87,6 +101,7 @@ Partial Class Accueil
         Me.Controls.Add(Me.NomCbx)
         Me.Name = "Accueil"
         Me.Text = "Accueil"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -96,4 +111,5 @@ Partial Class Accueil
     Friend WithEvents QuitButton As Button
     Friend WithEvents FormButton As Button
     Friend WithEvents SettingBtn As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

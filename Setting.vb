@@ -2,6 +2,8 @@
 
 Public Class Setting
     Dim rowAndCollumn, timer, nbMines As Integer
+    Private pause As Boolean
+
 
     Private Sub ScrollBar_Time_Scroll(sender As Object, e As ScrollEventArgs) Handles ScrollBar_Time.Scroll
         TimeValueLabel.Text = ScrollBar_Time.Value
@@ -24,13 +26,34 @@ Public Class Setting
     Private Sub Setting_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim file As New StreamWriter("config.txt")
         file.WriteLine(rowAndCollumn)
+        file.WriteLine(pause)
         file.WriteLine(ScrollBar_MineValue.Value)
         file.WriteLine(ScrollBar_Time.Value)
         file.Close()
-
         Accueil.Show()
     End Sub
 
+    Private Sub Radio10x10_CheckedChanged(sender As Object, e As EventArgs) Handles Radio10x10.CheckedChanged, Radio6x6.CheckedChanged, Radio8x8.CheckedChanged
+        If Radio6x6.Checked = True Then
+            rowAndCollumn = 6
+        ElseIf Radio8x8.Checked = True Then
+            rowAndCollumn = 8
+        ElseIf Radio10x10.Checked = True Then
+            rowAndCollumn = 10
+        End If
+    End Sub
+
+    Private Sub PauseCheckbox_CheckedChanged(sender As Object, e As EventArgs) Handles PauseCheckbox.CheckedChanged
+        If sender.checked = True Then
+            pause = True
+        Else
+            pause = False
+        End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
 
     Private Sub ScrollBar_MineValue_Scroll(sender As Object, e As ScrollEventArgs) Handles ScrollBar_MineValue.Scroll
         MineValue.Text = ScrollBar_MineValue.Value
@@ -57,9 +80,16 @@ Public Class Setting
         ScrollBar_Time.Maximum = 184
 
 
-
+        pause = file.ReadLine
+        If pause = True Then
+            PauseCheckbox.Checked = True
+        Else
+            PauseCheckbox.Checked = False
+        End If
         ScrollBar_MineValue.Value = file.ReadLine
         ScrollBar_Time.Value = file.ReadLine
+
+
         file.Close()
         '' faire la partie timer
 
