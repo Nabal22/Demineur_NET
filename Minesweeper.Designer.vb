@@ -33,7 +33,7 @@ Partial Class Minesweeper
         '
         'LayoutPanel
         '
-        Me.LayoutPanel.AutoSize = True
+        Me.LayoutPanel.AutoScroll = True
         Me.LayoutPanel.ColumnCount = 8
         Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())

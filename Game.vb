@@ -92,18 +92,140 @@
             End If
             Return nbMinesAround
         End If
-        ''pas de case à gauche
-
-        '' pas de case à droite
-
-        ''pas de case en bas
-
         ''pas de case en haut
+        If (row = 0) Then
+            ''cas à droite
+            If isAMine(row, col + 1) Then
+                nbMinesAround += 1
+            End If
+            '' case à gauche
+            If isAMine(row, col - 1) Then
+                nbMinesAround += 1
+            End If
+            'diagonale bas droite
+            If isAMine(row + 1, col + 1) Then
+                nbMinesAround += 1
+            End If
+            ''diagonale bas gauche
+            If isAMine(row + 1, col - 1) Then
+                nbMinesAround += 1
+            End If
+            ''case en bas
+            If isAMine(row + 1, col) Then
+                nbMinesAround += 1
+            End If
+            Return nbMinesAround
+        End If
+        ''pas de case en bas
+        If (row = dimTab - 1) Then
+            ''case en haut
+            If isAMine(row - 1, col) Then
+                nbMinesAround += 1
+            End If
+            ''case en bas
+            If isAMine(row + 1, col) Then
+                nbMinesAround += 1
+            End If
+            ''cas à droite
+            If isAMine(row, col + 1) Then
+                nbMinesAround += 1
+            End If
+            ''diagonale haut gauche
+            If isAMine(row - 1, col - 1) Then
+                nbMinesAround += 1
+            End If
+            'diagonale haut droite
+            If isAMine(row - 1, col + 1) Then
+                nbMinesAround += 1
+            End If
+            '' case à gauche
+            If isAMine(row, col - 1) Then
+                nbMinesAround += 1
+            End If
+            Return nbMinesAround
+        End If
+        ''pas de case à gauche
+        If (col = 0) Then
+            ''case en haut
+            If isAMine(row - 1, col) Then
+                nbMinesAround += 1
+            End If
+            ''case en bas
+            If isAMine(row + 1, col) Then
+                nbMinesAround += 1
+            End If
+            ''cas à droite
+            If isAMine(row, col + 1) Then
+                nbMinesAround += 1
+            End If
+            'diagonale haut droite
+            If isAMine(row - 1, col + 1) Then
+                nbMinesAround += 1
+            End If
+            'diagonale bas droite
+            If isAMine(row + 1, col + 1) Then
+                nbMinesAround += 1
+            End If
+            Return nbMinesAround
+        End If
+        ''pas de case à droite
+        If (col = dimTab - 1) Then
+            ''case en haut
+            If isAMine(row - 1, col) Then
+                nbMinesAround += 1
+            End If
+            ''case en bas
+            If isAMine(row + 1, col) Then
+                nbMinesAround += 1
+            End If
+            '' case à gauche
+            If isAMine(row, col - 1) Then
+                nbMinesAround += 1
+            End If
+            ''diagonale haut gauche
+            If isAMine(row - 1, col - 1) Then
+                nbMinesAround += 1
+            End If
+            ''diagonale bas gauche
+            If isAMine(row + 1, col - 1) Then
+                nbMinesAround += 1
+            End If
+            Return nbMinesAround
+        End If
 
+        ''cas général
+        ''case en haut
+        If isAMine(row - 1, col) Then
+            nbMinesAround += 1
+        End If
+        ''case en bas
+        If isAMine(row + 1, col) Then
+            nbMinesAround += 1
+        End If
+        ''cas à droite
+        If isAMine(row, col + 1) Then
+            nbMinesAround += 1
+        End If
+        '' case à gauche
+        If isAMine(row, col - 1) Then
+            nbMinesAround += 1
+        End If
+        ''diagonale haut gauche
+        If isAMine(row - 1, col - 1) Then
+            nbMinesAround += 1
+        End If
+        ''diagonale haut droite
+        If isAMine(row - 1, col + 1) Then
+            nbMinesAround += 1
+        End If
+        ''diagonale bas gauche
+        If isAMine(row + 1, col - 1) Then
+            nbMinesAround += 1
+        End If
+        'diagonale bas droite
+        If isAMine(row + 1, col + 1) Then
+            nbMinesAround += 1
+        End If
         Return nbMinesAround
     End Function
-
-    Sub jouerTour()
-
-    End Sub
 End Module
