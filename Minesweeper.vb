@@ -9,7 +9,7 @@ Public Class Minesweeper
 
     Private temps As Integer = 64
     Private tab(,) As Boolean
-    Private dimRowAndCollumn As Integer = 8, nbMines As Integer = 5
+    Private dimRowAndCollumn As Integer = 8, nbMines As Integer = 10
 
     Private Sub Minesweeper_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Timer1.Stop()
@@ -73,6 +73,8 @@ Public Class Minesweeper
 
     Private Sub ClicOnBtn(sender As Object, e As EventArgs)
         Dim index As Integer = LayoutPanel.Controls.GetChildIndex(sender)
+        Console.WriteLine(index)
+
         Dim topLeft, top, topRight, left, right, bottomLeft, bottom, bottomRight As Integer
         topLeft = index - dimRowAndCollumn - 1
         top = index - 1
@@ -85,10 +87,9 @@ Public Class Minesweeper
 
         Dim row = LayoutPanel.GetRow(sender)
         Dim col = LayoutPanel.GetColumn(sender)
-
         If isAMine(row, col) = True Then
             sender.BackColor = Color.Red
-        Else
+        ElseIf sender.Visible = True Then
             sender.visible = False
             Dim mineAroundClick As Integer = mineAround(row, col)
             If (mineAroundClick > 0) Then
@@ -100,28 +101,30 @@ Public Class Minesweeper
                 newLabel.TextAlign = ContentAlignment.MiddleCenter
                 LayoutPanel.Controls.Add(newLabel, col, row)
             Else
-                '' pas de case en haut
+                ''coin en haut a droite
                 If (row = 0 And col = dimRowAndCollumn - 1) Then
                     ClicOnBtn(LayoutPanel.Controls.Item(left), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
-                    ''pas de case en haut à gauche
+                    ''coin case en haut à gauche
                 ElseIf (row = 0 And col = 0) Then
+
                     ClicOnBtn(LayoutPanel.Controls.Item(right), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(bottomRight), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
-                    ''pas de case en bas à droite
+                    ''coin case en bas à droite
                 ElseIf (row = dimRowAndCollumn - 1 And col = dimRowAndCollumn - 1) Then
                     ClicOnBtn(LayoutPanel.Controls.Item(left), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(topLeft), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(top), e)
-                    ''pas de case en bas à gauche
+                    ''coin case en bas à gauche
                 ElseIf (row = dimRowAndCollumn - 1 And col = 0) Then
                     ClicOnBtn(LayoutPanel.Controls.Item(right), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(topRight), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(top), e)
                     ''pas de case en haut
                 ElseIf (row = 0) Then
+                    Console.WriteLine("haut")
                     ClicOnBtn(LayoutPanel.Controls.Item(left), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
@@ -158,7 +161,6 @@ Public Class Minesweeper
                     ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
                     ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
                 End If
-
             End If
         End If
     End Sub
