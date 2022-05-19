@@ -228,4 +228,5 @@
         End If
         Return nbMinesAround
     End Function
+
 End Module

@@ -7,8 +7,9 @@ Public Class Minesweeper
     Private estPause As Boolean = False
     Private timePause As Integer = 0
 
-    Dim temps As Integer = 64
-    Dim tab(,) As Boolean
+    Private temps As Integer = 64
+    Private tab(,) As Boolean
+    Private dimRowAndCollumn As Integer = 8, nbMines As Integer = 5
 
     Private Sub Minesweeper_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Timer1.Stop()
@@ -49,7 +50,6 @@ Public Class Minesweeper
     End Sub
 
     Private Sub Minesweeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dimRowAndCollumn As Integer = 8, nbMines As Integer = 15
         Main(dimRowAndCollumn, nbMines)
         For i As Integer = 0 To dimRowAndCollumn - 1
             For j As Integer = 0 To dimRowAndCollumn - 1
@@ -67,17 +67,29 @@ Public Class Minesweeper
         If pause = True Then
             PauseButton.Visible = True
         Else
-        PauseButton.Visible = False
+            PauseButton.Visible = False
         End If
     End Sub
 
     Private Sub ClicOnBtn(sender As Object, e As EventArgs)
+        Dim index As Integer = LayoutPanel.Controls.GetChildIndex(sender)
+        Dim topLeft, top, topRight, left, right, bottomLeft, bottom, bottomRight As Integer
+        topLeft = index - dimRowAndCollumn - 1
+        top = index - 1
+        topRight = index + dimRowAndCollumn - 1
+        left = index - dimRowAndCollumn
+        right = index + dimRowAndCollumn
+        bottomLeft = index - dimRowAndCollumn + 1
+        bottom = index + 1
+        bottomRight = index + dimRowAndCollumn + 1
+
         Dim row = LayoutPanel.GetRow(sender)
         Dim col = LayoutPanel.GetColumn(sender)
+
         If isAMine(row, col) = True Then
             sender.BackColor = Color.Red
         Else
-            LayoutPanel.Controls.Remove(sender)
+            sender.visible = False
             Dim mineAroundClick As Integer = mineAround(row, col)
             If (mineAroundClick > 0) Then
                 Dim newLabel As Label = New Label()
@@ -87,9 +99,68 @@ Public Class Minesweeper
                 newLabel.AutoSize = False
                 newLabel.TextAlign = ContentAlignment.MiddleCenter
                 LayoutPanel.Controls.Add(newLabel, col, row)
+            Else
+                '' pas de case en haut
+                If (row = 0 And col = dimRowAndCollumn - 1) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(left), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
+                    ''pas de case en haut à gauche
+                ElseIf (row = 0 And col = 0) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(right), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomRight), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
+                    ''pas de case en bas à droite
+                ElseIf (row = dimRowAndCollumn - 1 And col = dimRowAndCollumn - 1) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(left), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(top), e)
+                    ''pas de case en bas à gauche
+                ElseIf (row = dimRowAndCollumn - 1 And col = 0) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(right), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topRight), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(top), e)
+                    ''pas de case en haut
+                ElseIf (row = 0) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(left), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(right), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomRight), e)
+                    ''pas de case en bas
+                ElseIf (row = dimRowAndCollumn - 1) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(left), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(top), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(right), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topRight), e)
+                    ''pas de case à droite
+                ElseIf (col = dimRowAndCollumn - 1) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(left), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(top), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
+                    ''pas de case à gauche
+                ElseIf (col = 0) Then
+                    ClicOnBtn(LayoutPanel.Controls.Item(right), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topRight), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(top), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomRight), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
+                Else
+                    ClicOnBtn(LayoutPanel.Controls.Item(right), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(left), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topRight), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(topLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(top), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomRight), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
+                    ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)
+                End If
+
             End If
         End If
-
     End Sub
 
     Private Sub PauseButton_Click(sender As Object, e As EventArgs) Handles PauseButton.Click
