@@ -60,7 +60,6 @@ Public Class Setting
     End Sub
 
     Private Sub Setting_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Console.WriteLine(rowAndCollumn)
         Dim file As New StreamReader("config.txt")
         rowAndCollumn = file.ReadLine()
         Select Case rowAndCollumn
@@ -88,8 +87,6 @@ Public Class Setting
         End If
         ScrollBar_MineValue.Value = file.ReadLine
         ScrollBar_Time.Value = file.ReadLine
-
-
         file.Close()
         '' faire la partie timer
 

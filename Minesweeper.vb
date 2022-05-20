@@ -71,10 +71,18 @@ Public Class Minesweeper
         End If
     End Sub
 
+    Function getNbCaseDiscovered() As Integer
+        Dim nbCaseDiscovered As Integer = 0
+        For Each ctrl As Control In LayoutPanel.Controls
+            If ctrl.Visible = False Then
+                nbCaseDiscovered += 1
+            End If
+        Next
+        Return nbCaseDiscovered
+    End Function
+
     Private Sub ClicOnBtn(sender As Object, e As EventArgs)
         Dim index As Integer = LayoutPanel.Controls.GetChildIndex(sender)
-        Console.WriteLine(index)
-
         Dim topLeft, top, topRight, left, right, bottomLeft, bottom, bottomRight As Integer
         topLeft = index - dimRowAndCollumn - 1
         top = index - 1
@@ -89,6 +97,7 @@ Public Class Minesweeper
         Dim col = LayoutPanel.GetColumn(sender)
         If isAMine(row, col) = True Then
             sender.BackColor = Color.Red
+            saveScore(NameLabel.Text, getNbCaseDiscovered(), TimeLabel.Text)
         ElseIf sender.Visible = True Then
             sender.visible = False
             Dim mineAroundClick As Integer = mineAround(row, col)

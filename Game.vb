@@ -1,4 +1,7 @@
-﻿Module Game
+﻿Imports System.IO
+Imports System.Text
+
+Module Game
 
     Dim tab(,) As Boolean
     Dim dimTab As Integer
@@ -228,5 +231,22 @@
         End If
         Return nbMinesAround
     End Function
+
+    Sub saveScore(nom As String, nbCasesDiscovered As Integer, time As Integer)
+        Dim fileReader As New StreamReader("score.txt")
+        Dim stringTmp As New StringBuilder
+        While Not fileReader.EndOfStream()
+            stringTmp.AppendLine(fileReader.ReadLine())
+        End While
+        fileReader.Close()
+
+        Dim fileWriter As New StreamWriter("score.txt")
+        fileWriter.Write(stringTmp.ToString())
+        fileWriter.WriteLine(nom)
+        fileWriter.WriteLine(nbCasesDiscovered)
+        fileWriter.WriteLine(time)
+        fileWriter.WriteLine(ScoreTab.getNbPartie(nom))
+        fileWriter.Close()
+    End Sub
 
 End Module

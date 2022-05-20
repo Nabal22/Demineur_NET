@@ -22,40 +22,42 @@ Partial Class ScoreTab
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.ListBoxNom = New System.Windows.Forms.ListBox()
+        Me.ListBoxMines = New System.Windows.Forms.ListBox()
+        Me.ListBoxTime = New System.Windows.Forms.ListBox()
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.MineLabel = New System.Windows.Forms.Label()
         Me.TimeLabel = New System.Windows.Forms.Label()
         Me.ChangeOrderButton = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxRechercheJoueur = New System.Windows.Forms.ComboBox()
         Me.SearchButton = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ListBoxNbGame = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'ListBoxNom
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(49, 162)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox1.TabIndex = 0
+        Me.ListBoxNom.FormattingEnabled = True
+        Me.ListBoxNom.Location = New System.Drawing.Point(49, 162)
+        Me.ListBoxNom.Name = "ListBoxNom"
+        Me.ListBoxNom.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxNom.TabIndex = 0
         '
-        'ListBox2
+        'ListBoxMines
         '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(243, 162)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox2.TabIndex = 1
+        Me.ListBoxMines.FormattingEnabled = True
+        Me.ListBoxMines.Location = New System.Drawing.Point(243, 162)
+        Me.ListBoxMines.Name = "ListBoxMines"
+        Me.ListBoxMines.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxMines.TabIndex = 1
         '
-        'ListBox3
+        'ListBoxTime
         '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(458, 162)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox3.TabIndex = 2
+        Me.ListBoxTime.FormattingEnabled = True
+        Me.ListBoxTime.Location = New System.Drawing.Point(458, 162)
+        Me.ListBoxTime.Name = "ListBoxTime"
+        Me.ListBoxTime.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxTime.TabIndex = 2
         '
         'NameLabel
         '
@@ -86,20 +88,20 @@ Partial Class ScoreTab
         '
         'ChangeOrderButton
         '
-        Me.ChangeOrderButton.Location = New System.Drawing.Point(665, 124)
+        Me.ChangeOrderButton.Location = New System.Drawing.Point(669, 97)
         Me.ChangeOrderButton.Name = "ChangeOrderButton"
         Me.ChangeOrderButton.Size = New System.Drawing.Size(86, 23)
         Me.ChangeOrderButton.TabIndex = 6
         Me.ChangeOrderButton.Text = "ChangerOrdre"
         Me.ChangeOrderButton.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'ComboBoxRechercheJoueur
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(272, 44)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 7
+        Me.ComboBoxRechercheJoueur.FormattingEnabled = True
+        Me.ComboBoxRechercheJoueur.Location = New System.Drawing.Point(272, 44)
+        Me.ComboBoxRechercheJoueur.Name = "ComboBoxRechercheJoueur"
+        Me.ComboBoxRechercheJoueur.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxRechercheJoueur.TabIndex = 7
         '
         'SearchButton
         '
@@ -110,20 +112,39 @@ Partial Class ScoreTab
         Me.SearchButton.Text = "Rechercher"
         Me.SearchButton.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(622, 135)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(133, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Nombre De Parties Jouées"
+        '
+        'ListBoxNbGame
+        '
+        Me.ListBoxNbGame.FormattingEnabled = True
+        Me.ListBoxNbGame.Location = New System.Drawing.Point(625, 162)
+        Me.ListBoxNbGame.Name = "ListBoxNbGame"
+        Me.ListBoxNbGame.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxNbGame.TabIndex = 10
+        '
         'ScoreTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ListBoxNbGame)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.SearchButton)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.ComboBoxRechercheJoueur)
         Me.Controls.Add(Me.ChangeOrderButton)
         Me.Controls.Add(Me.TimeLabel)
         Me.Controls.Add(Me.MineLabel)
         Me.Controls.Add(Me.NameLabel)
-        Me.Controls.Add(Me.ListBox3)
-        Me.Controls.Add(Me.ListBox2)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.ListBoxTime)
+        Me.Controls.Add(Me.ListBoxMines)
+        Me.Controls.Add(Me.ListBoxNom)
         Me.Name = "ScoreTab"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -131,13 +152,15 @@ Partial Class ScoreTab
 
     End Sub
 
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ListBox2 As ListBox
-    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents ListBoxNom As ListBox
+    Friend WithEvents ListBoxMines As ListBox
+    Friend WithEvents ListBoxTime As ListBox
     Friend WithEvents NameLabel As Label
     Friend WithEvents MineLabel As Label
     Friend WithEvents TimeLabel As Label
     Friend WithEvents ChangeOrderButton As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBoxRechercheJoueur As ComboBox
     Friend WithEvents SearchButton As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ListBoxNbGame As ListBox
 End Class

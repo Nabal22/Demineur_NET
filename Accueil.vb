@@ -1,4 +1,6 @@
-﻿Public Class Accueil
+﻿Imports System.IO
+
+Public Class Accueil
 
     Private Sub FormButton_Click(sender As Object, e As EventArgs) Handles FormButton.Click
         Me.Hide()
@@ -6,7 +8,18 @@
     End Sub
 
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ScoreTab.ScoreTab_Load(sender, e)
+        Dim file As New StreamReader("score.txt")
+        While (Not file.EndOfStream)
+            Dim nom As String = file.ReadLine()
+            If Not NomCbx.Items.Contains(nom) Then
+                NomCbx.Items.Add(nom)
+            End If
+            file.ReadLine()
+            file.ReadLine()
+            file.ReadLine()
+        End While
+        file.Close()
     End Sub
 
     Private Sub Accueil_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -34,5 +47,9 @@
     Private Sub SettingBtn_Click(sender As Object, e As EventArgs) Handles SettingBtn.Click
         Me.Hide()
         Setting.Show()
+    End Sub
+
+    Private Sub NomCbx_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NomCbx.SelectedIndexChanged
+
     End Sub
 End Class

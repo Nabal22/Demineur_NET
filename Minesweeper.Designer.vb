@@ -29,7 +29,6 @@ Partial Class Minesweeper
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.LeaveButton = New System.Windows.Forms.Button()
         Me.TimeLabel = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PauseButton = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,15 +90,6 @@ Partial Class Minesweeper
         Me.TimeLabel.TabIndex = 3
         Me.TimeLabel.Text = "Label1"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(54, 219)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Label1"
-        '
         'PauseButton
         '
         Me.PauseButton.Location = New System.Drawing.Point(528, 18)
@@ -127,7 +117,6 @@ Partial Class Minesweeper
         Me.ClientSize = New System.Drawing.Size(718, 450)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PauseButton)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TimeLabel)
         Me.Controls.Add(Me.LeaveButton)
         Me.Controls.Add(Me.NameLabel)
@@ -145,7 +134,6 @@ Partial Class Minesweeper
     Friend WithEvents NameLabel As Label
     Friend WithEvents LeaveButton As Button
     Friend WithEvents TimeLabel As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents PauseButton As Button
     Friend WithEvents PictureBox1 As PictureBox
 End Class
