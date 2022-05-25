@@ -29,7 +29,9 @@ Partial Class Accueil
         Me.FormButton = New System.Windows.Forms.Button()
         Me.SettingBtn = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NomCbx
@@ -88,11 +90,22 @@ Partial Class Accueil
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.InitialImage = CType(resources.GetObject("PictureBox2.InitialImage"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(765, -1)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(34, 34)
+        Me.PictureBox2.TabIndex = 17
+        Me.PictureBox2.TabStop = False
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.SettingBtn)
         Me.Controls.Add(Me.FormButton)
@@ -102,6 +115,7 @@ Partial Class Accueil
         Me.Name = "Accueil"
         Me.Text = "Accueil"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -112,4 +126,5 @@ Partial Class Accueil
     Friend WithEvents FormButton As Button
     Friend WithEvents SettingBtn As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

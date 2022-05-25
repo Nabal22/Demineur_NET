@@ -81,6 +81,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Game.vb" />
+    <Compile Include="Information.Designer.vb">
+      <DependentUpon>Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Minesweeper.Designer.vb">
       <DependentUpon>Minesweeper.vb</DependentUpon>
     </Compile>

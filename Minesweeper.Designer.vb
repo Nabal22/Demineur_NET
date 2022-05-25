@@ -37,7 +37,9 @@ Partial Class Minesweeper
         'LayoutPanel
         '
         Me.LayoutPanel.AutoScroll = True
-        Me.LayoutPanel.ColumnCount = 8
+        Me.LayoutPanel.ColumnCount = 10
+        Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -48,7 +50,9 @@ Partial Class Minesweeper
         Me.LayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.LayoutPanel.Location = New System.Drawing.Point(153, 69)
         Me.LayoutPanel.Name = "LayoutPanel"
-        Me.LayoutPanel.RowCount = 8
+        Me.LayoutPanel.RowCount = 10
+        Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.LayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())

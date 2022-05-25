@@ -82,11 +82,6 @@ Public Class ScoreTab
         End If
     End Sub
 
-    Private Sub ScoreTab_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Accueil.Show()
-        Me.Close()
-    End Sub
-
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         Dim nom = ComboBoxRechercheJoueur.Text
 

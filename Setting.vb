@@ -55,6 +55,35 @@ Public Class Setting
 
     End Sub
 
+    Private Sub Lvl1RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles Lvl1RadioButton.CheckedChanged, Lvl2RadioButton.CheckedChanged, Lvl3RadioButton.CheckedChanged, Lvl4RadioButton.CheckedChanged, Lvl5RadioButton.CheckedChanged
+        If Lvl1RadioButton.Checked = True Then
+            PauseCheckbox.Checked = True
+            ScrollBar_MineValue.Value = 2
+            Radio6x6.Checked = True
+            ScrollBar_Time.Value = 180
+        ElseIf Lvl2RadioButton.Checked = True Then
+            PauseCheckbox.Checked = True
+            ScrollBar_MineValue.Value = 4
+            Radio6x6.Checked = True
+            ScrollBar_Time.Value = 120
+        ElseIf Lvl3RadioButton.Checked = True Then
+            PauseCheckbox.Checked = False
+            ScrollBar_MineValue.Value = 10
+            Radio8x8.Checked = True
+            ScrollBar_Time.Value = 120
+        ElseIf Lvl4RadioButton.Checked = True Then
+            PauseCheckbox.Checked = False
+            ScrollBar_MineValue.Value = 12
+            Radio10x10.Checked = True
+            ScrollBar_Time.Value = 60
+        ElseIf Lvl5RadioButton.Checked = True Then
+            PauseCheckbox.Checked = False
+            ScrollBar_MineValue.Value = 16
+            Radio10x10.Checked = True
+            ScrollBar_Time.Value = 30
+        End If
+    End Sub
+
     Private Sub ScrollBar_MineValue_Scroll(sender As Object, e As ScrollEventArgs) Handles ScrollBar_MineValue.Scroll
         MineValue.Text = ScrollBar_MineValue.Value
     End Sub

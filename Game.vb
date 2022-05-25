@@ -4,11 +4,13 @@ Imports System.Text
 Module Game
 
     Dim tab(,) As Boolean
+    Dim drapeau(,) As Boolean
     Dim dimTab As Integer
 
     Dim gameAsEnded As Boolean = False
     Sub Main(dimRowAndCollumn As Integer, nbMines As Integer)
         ReDim tab(dimRowAndCollumn, dimRowAndCollumn)
+        ReDim drapeau(dimRowAndCollumn, dimRowAndCollumn)
         dimTab = dimRowAndCollumn
         gameAsEnded = False
 
@@ -28,6 +30,32 @@ Module Game
 
 
     End Sub
+
+    Function partieGagne(mine As Integer) As Boolean
+        Dim estMarque As Integer = 0
+        For i As Integer = 0 To dimTab
+            For j As Integer = 0 To dimTab
+                If tab.GetValue(i, j) = True And drapeau.GetValue(i, j) = True Then
+                    estMarque+=1
+                End If
+            Next
+        Next
+
+        If estMarque = mine Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
+    Function isADrapeau(row As Integer, col As Integer) As Boolean
+        Return drapeau(row, col)
+    End Function
+
+    Function setDrapeau(row As Integer, col As Integer, drap As Boolean)
+        drapeau.SetValue(drap, row, col)
+    End Function
 
     Function getStateOfGame() As Boolean
         Return gameAsEnded

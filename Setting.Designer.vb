@@ -38,11 +38,11 @@ Partial Class Setting
         Me.PauseLabel = New System.Windows.Forms.Label()
         Me.PauseCheckbox = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Lvl5RadioButton = New System.Windows.Forms.RadioButton()
+        Me.Lvl4RadioButton = New System.Windows.Forms.RadioButton()
         Me.Lvl1RadioButton = New System.Windows.Forms.RadioButton()
         Me.Lvl2RadioButton = New System.Windows.Forms.RadioButton()
         Me.Lvl3RadioButton = New System.Windows.Forms.RadioButton()
-        Me.Lvl4RadioButton = New System.Windows.Forms.RadioButton()
-        Me.Lvl5RadioButton = New System.Windows.Forms.RadioButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBoxChoixGrille.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -199,6 +199,28 @@ Partial Class Setting
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         '
+        'Lvl5RadioButton
+        '
+        Me.Lvl5RadioButton.AutoSize = True
+        Me.Lvl5RadioButton.Location = New System.Drawing.Point(327, 19)
+        Me.Lvl5RadioButton.Name = "Lvl5RadioButton"
+        Me.Lvl5RadioButton.Size = New System.Drawing.Size(66, 17)
+        Me.Lvl5RadioButton.TabIndex = 10
+        Me.Lvl5RadioButton.TabStop = True
+        Me.Lvl5RadioButton.Text = "Machine"
+        Me.Lvl5RadioButton.UseVisualStyleBackColor = True
+        '
+        'Lvl4RadioButton
+        '
+        Me.Lvl4RadioButton.AutoSize = True
+        Me.Lvl4RadioButton.Location = New System.Drawing.Point(266, 19)
+        Me.Lvl4RadioButton.Name = "Lvl4RadioButton"
+        Me.Lvl4RadioButton.Size = New System.Drawing.Size(55, 17)
+        Me.Lvl4RadioButton.TabIndex = 9
+        Me.Lvl4RadioButton.TabStop = True
+        Me.Lvl4RadioButton.Text = "Expert"
+        Me.Lvl4RadioButton.UseVisualStyleBackColor = True
+        '
         'Lvl1RadioButton
         '
         Me.Lvl1RadioButton.AutoSize = True
@@ -231,28 +253,6 @@ Partial Class Setting
         Me.Lvl3RadioButton.TabStop = True
         Me.Lvl3RadioButton.Text = "Intermédiaire"
         Me.Lvl3RadioButton.UseVisualStyleBackColor = True
-        '
-        'Lvl4RadioButton
-        '
-        Me.Lvl4RadioButton.AutoSize = True
-        Me.Lvl4RadioButton.Location = New System.Drawing.Point(266, 19)
-        Me.Lvl4RadioButton.Name = "Lvl4RadioButton"
-        Me.Lvl4RadioButton.Size = New System.Drawing.Size(55, 17)
-        Me.Lvl4RadioButton.TabIndex = 9
-        Me.Lvl4RadioButton.TabStop = True
-        Me.Lvl4RadioButton.Text = "Expert"
-        Me.Lvl4RadioButton.UseVisualStyleBackColor = True
-        '
-        'Lvl5RadioButton
-        '
-        Me.Lvl5RadioButton.AutoSize = True
-        Me.Lvl5RadioButton.Location = New System.Drawing.Point(327, 19)
-        Me.Lvl5RadioButton.Name = "Lvl5RadioButton"
-        Me.Lvl5RadioButton.Size = New System.Drawing.Size(66, 17)
-        Me.Lvl5RadioButton.TabIndex = 10
-        Me.Lvl5RadioButton.TabStop = True
-        Me.Lvl5RadioButton.Text = "Machine"
-        Me.Lvl5RadioButton.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '

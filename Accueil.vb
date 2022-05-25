@@ -23,7 +23,6 @@ Public Class Accueil
     End Sub
 
     Private Sub Accueil_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-
         If MsgBox("Voulez-vous vraiment quitter ?", MsgBoxStyle.YesNo, "Fermeture du programme") = MsgBoxResult.No Then
             e.Cancel = True
         End If
@@ -49,7 +48,7 @@ Public Class Accueil
         Setting.Show()
     End Sub
 
-    Private Sub NomCbx_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NomCbx.SelectedIndexChanged
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
 
     End Sub
 End Class
