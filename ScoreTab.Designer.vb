@@ -33,12 +33,14 @@ Partial Class ScoreTab
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListBoxNbGame = New System.Windows.Forms.ListBox()
+        Me.ListBoxCumul = New System.Windows.Forms.ListBox()
+        Me.LabelCumul = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ListBoxNom
         '
         Me.ListBoxNom.FormattingEnabled = True
-        Me.ListBoxNom.Location = New System.Drawing.Point(49, 162)
+        Me.ListBoxNom.Location = New System.Drawing.Point(13, 160)
         Me.ListBoxNom.Name = "ListBoxNom"
         Me.ListBoxNom.Size = New System.Drawing.Size(120, 95)
         Me.ListBoxNom.TabIndex = 0
@@ -46,7 +48,7 @@ Partial Class ScoreTab
         'ListBoxMines
         '
         Me.ListBoxMines.FormattingEnabled = True
-        Me.ListBoxMines.Location = New System.Drawing.Point(243, 162)
+        Me.ListBoxMines.Location = New System.Drawing.Point(161, 160)
         Me.ListBoxMines.Name = "ListBoxMines"
         Me.ListBoxMines.Size = New System.Drawing.Size(120, 95)
         Me.ListBoxMines.TabIndex = 1
@@ -54,7 +56,7 @@ Partial Class ScoreTab
         'ListBoxTime
         '
         Me.ListBoxTime.FormattingEnabled = True
-        Me.ListBoxTime.Location = New System.Drawing.Point(458, 162)
+        Me.ListBoxTime.Location = New System.Drawing.Point(328, 161)
         Me.ListBoxTime.Name = "ListBoxTime"
         Me.ListBoxTime.Size = New System.Drawing.Size(120, 95)
         Me.ListBoxTime.TabIndex = 2
@@ -62,7 +64,7 @@ Partial Class ScoreTab
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
-        Me.NameLabel.Location = New System.Drawing.Point(46, 125)
+        Me.NameLabel.Location = New System.Drawing.Point(10, 133)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(29, 13)
         Me.NameLabel.TabIndex = 3
@@ -71,24 +73,24 @@ Partial Class ScoreTab
         'MineLabel
         '
         Me.MineLabel.AutoSize = True
-        Me.MineLabel.Location = New System.Drawing.Point(240, 135)
+        Me.MineLabel.Location = New System.Drawing.Point(158, 133)
         Me.MineLabel.Name = "MineLabel"
-        Me.MineLabel.Size = New System.Drawing.Size(126, 13)
+        Me.MineLabel.Size = New System.Drawing.Size(127, 13)
         Me.MineLabel.TabIndex = 4
-        Me.MineLabel.Text = "Nombre de mines révélés"
+        Me.MineLabel.Text = "Nombre de cases révélés"
         '
         'TimeLabel
         '
         Me.TimeLabel.AutoSize = True
-        Me.TimeLabel.Location = New System.Drawing.Point(455, 134)
+        Me.TimeLabel.Location = New System.Drawing.Point(325, 133)
         Me.TimeLabel.Name = "TimeLabel"
-        Me.TimeLabel.Size = New System.Drawing.Size(39, 13)
+        Me.TimeLabel.Size = New System.Drawing.Size(75, 13)
         Me.TimeLabel.TabIndex = 5
-        Me.TimeLabel.Text = "Temps"
+        Me.TimeLabel.Text = "Temps Ecoulé"
         '
         'ChangeOrderButton
         '
-        Me.ChangeOrderButton.Location = New System.Drawing.Point(669, 97)
+        Me.ChangeOrderButton.Location = New System.Drawing.Point(670, 82)
         Me.ChangeOrderButton.Name = "ChangeOrderButton"
         Me.ChangeOrderButton.Size = New System.Drawing.Size(86, 23)
         Me.ChangeOrderButton.TabIndex = 6
@@ -115,7 +117,7 @@ Partial Class ScoreTab
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(622, 135)
+        Me.Label1.Location = New System.Drawing.Point(479, 133)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 13)
         Me.Label1.TabIndex = 9
@@ -124,16 +126,35 @@ Partial Class ScoreTab
         'ListBoxNbGame
         '
         Me.ListBoxNbGame.FormattingEnabled = True
-        Me.ListBoxNbGame.Location = New System.Drawing.Point(625, 162)
+        Me.ListBoxNbGame.Location = New System.Drawing.Point(482, 160)
         Me.ListBoxNbGame.Name = "ListBoxNbGame"
         Me.ListBoxNbGame.Size = New System.Drawing.Size(120, 95)
         Me.ListBoxNbGame.TabIndex = 10
+        '
+        'ListBoxCumul
+        '
+        Me.ListBoxCumul.FormattingEnabled = True
+        Me.ListBoxCumul.Location = New System.Drawing.Point(642, 160)
+        Me.ListBoxCumul.Name = "ListBoxCumul"
+        Me.ListBoxCumul.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxCumul.TabIndex = 12
+        '
+        'LabelCumul
+        '
+        Me.LabelCumul.AutoSize = True
+        Me.LabelCumul.Location = New System.Drawing.Point(639, 133)
+        Me.LabelCumul.Name = "LabelCumul"
+        Me.LabelCumul.Size = New System.Drawing.Size(114, 13)
+        Me.LabelCumul.TabIndex = 11
+        Me.LabelCumul.Text = "Cumul du temps de jeu"
         '
         'ScoreTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ListBoxCumul)
+        Me.Controls.Add(Me.LabelCumul)
         Me.Controls.Add(Me.ListBoxNbGame)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.SearchButton)
@@ -163,4 +184,6 @@ Partial Class ScoreTab
     Friend WithEvents SearchButton As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ListBoxNbGame As ListBox
+    Friend WithEvents ListBoxCumul As ListBox
+    Friend WithEvents LabelCumul As Label
 End Class

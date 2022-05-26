@@ -13,14 +13,14 @@ Public Class Minesweeper
     Private Sub Minesweeper_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Timer1.Stop()
         LayoutPanel.Visible = False
-        If temps = 0 Then
+        If getStateOfGame() = True Then
             Accueil.Show()
         Else
             If MsgBox("Voulez-vous vraiment quitter la partie ?", MsgBoxStyle.YesNo, "Fermeture du programme") = MsgBoxResult.No Then
                 e.Cancel = True
                 LayoutPanel.Visible = True
             Else
-                setStateOfGame(True)
+
                 Accueil.Show()
             End If
         End If
@@ -69,7 +69,7 @@ Public Class Minesweeper
             PauseButton.Visible = False
         End If
         nbMines = file.ReadLine()
-        Main(dimRowAndCollumn, nbMines)
+        Init(dimRowAndCollumn, nbMines)
         For i As Integer = 0 To dimRowAndCollumn - 1
             For j As Integer = 0 To dimRowAndCollumn - 1
                 Dim newBtn As Button = New Button
@@ -119,6 +119,7 @@ Public Class Minesweeper
                 saveScore(NameLabel.Text, getNbCaseDiscovered(), file.ReadLine() - TimeLabel.Text)
                 file.Close()
                 MsgBox("C'était une mine, la partie est finie")
+                setStateOfGame(True)
                 Me.Close()
             ElseIf isADrapeau(row, col) = True Then
 
@@ -157,7 +158,6 @@ Public Class Minesweeper
                         ClicOnBtn(LayoutPanel.Controls.Item(top), e)
                         ''pas de case en haut
                     ElseIf (row = 0) Then
-                        Console.WriteLine("haut")
                         ClicOnBtn(LayoutPanel.Controls.Item(left), e)
                         ClicOnBtn(LayoutPanel.Controls.Item(bottomLeft), e)
                         ClicOnBtn(LayoutPanel.Controls.Item(bottom), e)

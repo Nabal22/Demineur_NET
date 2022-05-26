@@ -7,8 +7,7 @@ Public Class Accueil
         ScoreTab.Show()
     End Sub
 
-    Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ScoreTab.ScoreTab_Load(sender, e)
+    Public Sub Load_ComboBox()
         Dim file As New StreamReader("score.txt")
         While (Not file.EndOfStream)
             Dim nom As String = file.ReadLine()
@@ -18,8 +17,18 @@ Public Class Accueil
             file.ReadLine()
             file.ReadLine()
             file.ReadLine()
+            file.ReadLine()
         End While
         file.Close()
+    End Sub
+
+    Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        InitScore()
+        Load_ComboBox()
+    End Sub
+
+    Private Sub Accueil_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Load_ComboBox()
     End Sub
 
     Private Sub Accueil_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -48,7 +57,4 @@ Public Class Accueil
         Setting.Show()
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
-    End Sub
 End Class

@@ -8,7 +8,7 @@ Module Game
     Dim dimTab As Integer
 
     Dim gameAsEnded As Boolean = False
-    Sub Main(dimRowAndCollumn As Integer, nbMines As Integer)
+    Sub Init(dimRowAndCollumn As Integer, nbMines As Integer)
         ReDim tab(dimRowAndCollumn, dimRowAndCollumn)
         ReDim drapeau(dimRowAndCollumn, dimRowAndCollumn)
         dimTab = dimRowAndCollumn
@@ -25,10 +25,7 @@ Module Game
                 yTmp = random.Next(0, dimRowAndCollumn)
             End While
             tab.SetValue(True, xTmp, yTmp)
-            Console.WriteLine(xTmp & " - " & yTmp)
         Next
-
-
     End Sub
 
     Function partieGagne(mine As Integer) As Boolean
@@ -260,21 +257,6 @@ Module Game
         Return nbMinesAround
     End Function
 
-    Sub saveScore(nom As String, nbCasesDiscovered As Integer, time As Integer)
-        Dim fileReader As New StreamReader("score.txt")
-        Dim stringTmp As New StringBuilder
-        While Not fileReader.EndOfStream()
-            stringTmp.AppendLine(fileReader.ReadLine())
-        End While
-        fileReader.Close()
 
-        Dim fileWriter As New StreamWriter("score.txt")
-        fileWriter.Write(stringTmp.ToString())
-        fileWriter.WriteLine(nom)
-        fileWriter.WriteLine(nbCasesDiscovered)
-        fileWriter.WriteLine(time)
-        fileWriter.WriteLine(ScoreTab.getNbPartie(nom))
-        fileWriter.Close()
-    End Sub
 
 End Module
