@@ -6,6 +6,7 @@ Module Game
     Dim tab(,) As Boolean
     Dim drapeau(,) As Boolean
     Dim dimTab As Integer
+    Dim sombre As Boolean
 
     Dim gameAsEnded As Boolean = False
     Sub Init(dimRowAndCollumn As Integer, nbMines As Integer)
@@ -28,6 +29,14 @@ Module Game
         Next
     End Sub
 
+    Function getSombre() As Boolean
+        Return sombre
+    End Function
+
+    Function setSombre(b As Boolean) As Boolean
+        sombre = b
+    End Function
+
     Function partieGagne(mine As Integer) As Boolean
         Dim estMarque As Integer = 0
         For i As Integer = 0 To dimTab
@@ -38,7 +47,7 @@ Module Game
             Next
         Next
 
-        If estMarque = mine Then
+        If estMarque + 1 = mine Then
             Return True
         Else
             Return False

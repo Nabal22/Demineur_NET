@@ -78,12 +78,13 @@ Partial Class Minesweeper
         '
         'LeaveButton
         '
+        Me.LeaveButton.BackColor = System.Drawing.Color.WhiteSmoke
         Me.LeaveButton.Location = New System.Drawing.Point(609, 18)
         Me.LeaveButton.Name = "LeaveButton"
         Me.LeaveButton.Size = New System.Drawing.Size(75, 23)
         Me.LeaveButton.TabIndex = 2
         Me.LeaveButton.Text = "Abandonner"
-        Me.LeaveButton.UseVisualStyleBackColor = True
+        Me.LeaveButton.UseVisualStyleBackColor = False
         '
         'TimeLabel
         '
@@ -96,19 +97,20 @@ Partial Class Minesweeper
         '
         'PauseButton
         '
+        Me.PauseButton.BackColor = System.Drawing.Color.WhiteSmoke
         Me.PauseButton.Location = New System.Drawing.Point(528, 18)
         Me.PauseButton.Name = "PauseButton"
         Me.PauseButton.Size = New System.Drawing.Size(75, 23)
         Me.PauseButton.TabIndex = 5
         Me.PauseButton.Text = "Pause"
-        Me.PauseButton.UseVisualStyleBackColor = True
+        Me.PauseButton.UseVisualStyleBackColor = False
         Me.PauseButton.Visible = False
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(11, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(34, 41)
         Me.PictureBox1.TabIndex = 16
@@ -118,6 +120,7 @@ Partial Class Minesweeper
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(718, 450)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PauseButton)
@@ -125,6 +128,7 @@ Partial Class Minesweeper
         Me.Controls.Add(Me.LeaveButton)
         Me.Controls.Add(Me.NameLabel)
         Me.Controls.Add(Me.LayoutPanel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Minesweeper"
         Me.Text = "Minesweeper"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

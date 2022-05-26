@@ -22,6 +22,7 @@ Partial Class ScoreTab
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScoreTab))
         Me.ListBoxNom = New System.Windows.Forms.ListBox()
         Me.ListBoxMines = New System.Windows.Forms.ListBox()
         Me.ListBoxTime = New System.Windows.Forms.ListBox()
@@ -35,6 +36,8 @@ Partial Class ScoreTab
         Me.ListBoxNbGame = New System.Windows.Forms.ListBox()
         Me.ListBoxCumul = New System.Windows.Forms.ListBox()
         Me.LabelCumul = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ListBoxNom
@@ -51,6 +54,7 @@ Partial Class ScoreTab
         Me.ListBoxMines.Location = New System.Drawing.Point(161, 160)
         Me.ListBoxMines.Name = "ListBoxMines"
         Me.ListBoxMines.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxMines.Sorted = True
         Me.ListBoxMines.TabIndex = 1
         '
         'ListBoxTime
@@ -59,6 +63,7 @@ Partial Class ScoreTab
         Me.ListBoxTime.Location = New System.Drawing.Point(328, 161)
         Me.ListBoxTime.Name = "ListBoxTime"
         Me.ListBoxTime.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxTime.Sorted = True
         Me.ListBoxTime.TabIndex = 2
         '
         'NameLabel
@@ -90,12 +95,13 @@ Partial Class ScoreTab
         '
         'ChangeOrderButton
         '
+        Me.ChangeOrderButton.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ChangeOrderButton.Location = New System.Drawing.Point(670, 82)
         Me.ChangeOrderButton.Name = "ChangeOrderButton"
         Me.ChangeOrderButton.Size = New System.Drawing.Size(86, 23)
         Me.ChangeOrderButton.TabIndex = 6
         Me.ChangeOrderButton.Text = "ChangerOrdre"
-        Me.ChangeOrderButton.UseVisualStyleBackColor = True
+        Me.ChangeOrderButton.UseVisualStyleBackColor = False
         '
         'ComboBoxRechercheJoueur
         '
@@ -107,12 +113,13 @@ Partial Class ScoreTab
         '
         'SearchButton
         '
+        Me.SearchButton.BackColor = System.Drawing.Color.WhiteSmoke
         Me.SearchButton.Location = New System.Drawing.Point(446, 42)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(75, 23)
         Me.SearchButton.TabIndex = 8
         Me.SearchButton.Text = "Rechercher"
-        Me.SearchButton.UseVisualStyleBackColor = True
+        Me.SearchButton.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -129,6 +136,7 @@ Partial Class ScoreTab
         Me.ListBoxNbGame.Location = New System.Drawing.Point(482, 160)
         Me.ListBoxNbGame.Name = "ListBoxNbGame"
         Me.ListBoxNbGame.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxNbGame.Sorted = True
         Me.ListBoxNbGame.TabIndex = 10
         '
         'ListBoxCumul
@@ -137,6 +145,7 @@ Partial Class ScoreTab
         Me.ListBoxCumul.Location = New System.Drawing.Point(642, 160)
         Me.ListBoxCumul.Name = "ListBoxCumul"
         Me.ListBoxCumul.Size = New System.Drawing.Size(120, 95)
+        Me.ListBoxCumul.Sorted = True
         Me.ListBoxCumul.TabIndex = 12
         '
         'LabelCumul
@@ -148,11 +157,23 @@ Partial Class ScoreTab
         Me.LabelCumul.TabIndex = 11
         Me.LabelCumul.Text = "Cumul du temps de jeu"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 41)
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        '
         'ScoreTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ListBoxCumul)
         Me.Controls.Add(Me.LabelCumul)
         Me.Controls.Add(Me.ListBoxNbGame)
@@ -166,8 +187,10 @@ Partial Class ScoreTab
         Me.Controls.Add(Me.ListBoxTime)
         Me.Controls.Add(Me.ListBoxMines)
         Me.Controls.Add(Me.ListBoxNom)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ScoreTab"
-        Me.Text = "Form1"
+        Me.Text = "Statistique"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -186,4 +209,5 @@ Partial Class ScoreTab
     Friend WithEvents ListBoxNbGame As ListBox
     Friend WithEvents ListBoxCumul As ListBox
     Friend WithEvents LabelCumul As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

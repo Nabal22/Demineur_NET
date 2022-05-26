@@ -36,6 +36,8 @@ Partial Class Accueil
         '
         'NomCbx
         '
+        Me.NomCbx.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.NomCbx.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.NomCbx.FormattingEnabled = True
         Me.NomCbx.Location = New System.Drawing.Point(303, 150)
         Me.NomCbx.Name = "NomCbx"
@@ -44,8 +46,7 @@ Partial Class Accueil
         '
         'ValidButton
         '
-        Me.ValidButton.BackColor = System.Drawing.Color.White
-        Me.ValidButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ValidButton.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ValidButton.Location = New System.Drawing.Point(338, 260)
         Me.ValidButton.Name = "ValidButton"
         Me.ValidButton.Size = New System.Drawing.Size(102, 47)
@@ -55,36 +56,40 @@ Partial Class Accueil
         '
         'QuitButton
         '
+        Me.QuitButton.BackColor = System.Drawing.Color.WhiteSmoke
         Me.QuitButton.Location = New System.Drawing.Point(102, 260)
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(85, 47)
         Me.QuitButton.TabIndex = 2
         Me.QuitButton.Text = "Quitter"
-        Me.QuitButton.UseVisualStyleBackColor = True
+        Me.QuitButton.UseVisualStyleBackColor = False
         '
         'FormButton
         '
+        Me.FormButton.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.FormButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.FormButton.Location = New System.Drawing.Point(568, 260)
         Me.FormButton.Name = "FormButton"
         Me.FormButton.Size = New System.Drawing.Size(94, 47)
         Me.FormButton.TabIndex = 3
         Me.FormButton.Text = "Score"
-        Me.FormButton.UseVisualStyleBackColor = True
+        Me.FormButton.UseVisualStyleBackColor = False
         '
         'SettingBtn
         '
+        Me.SettingBtn.BackColor = System.Drawing.Color.WhiteSmoke
         Me.SettingBtn.Location = New System.Drawing.Point(338, 356)
         Me.SettingBtn.Name = "SettingBtn"
         Me.SettingBtn.Size = New System.Drawing.Size(94, 47)
         Me.SettingBtn.TabIndex = 4
         Me.SettingBtn.Text = "Réglages"
-        Me.SettingBtn.UseVisualStyleBackColor = True
+        Me.SettingBtn.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, -1)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(34, 41)
         Me.PictureBox1.TabIndex = 16
@@ -94,7 +99,7 @@ Partial Class Accueil
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.InitialImage = CType(resources.GetObject("PictureBox2.InitialImage"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(765, -1)
+        Me.PictureBox2.Location = New System.Drawing.Point(754, 6)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(34, 34)
         Me.PictureBox2.TabIndex = 17
@@ -104,6 +109,7 @@ Partial Class Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -112,6 +118,7 @@ Partial Class Accueil
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.ValidButton)
         Me.Controls.Add(Me.NomCbx)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Accueil"
         Me.Text = "Accueil"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

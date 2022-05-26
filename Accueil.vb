@@ -25,6 +25,7 @@ Public Class Accueil
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitScore()
         Load_ComboBox()
+        setSombre(False)
     End Sub
 
     Private Sub Accueil_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
@@ -57,4 +58,32 @@ Public Class Accueil
         Setting.Show()
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Information.Show()
+
+    End Sub
+
+    Private Sub Sombre()
+        Me.BackColor = SystemColors.ControlDarkDark
+        Me.FormButton.BackColor = SystemColors.ControlDark
+        Me.FormButton.ForeColor = Color.White
+        Me.FormButton.FlatAppearance.BorderColor = Color.Gray
+    End Sub
+
+    Private Sub Clair()
+        Me.BackColor = Color.White
+        Me.FormButton.BackColor = SystemColors.ControlLightLight
+        Me.FormButton.ForeColor = Color.Black
+        Me.FormButton.FlatAppearance.BorderColor = Color.Gray
+    End Sub
+
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If getSombre() = True Then
+            Clair()
+            setSombre(False)
+        Else
+            Sombre()
+            setSombre(True)
+        End If
+    End Sub
 End Class

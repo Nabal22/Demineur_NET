@@ -124,7 +124,31 @@ Public Class ScoreTab
 
     End Sub
 
-    Private Sub MineLabel_Click(sender As Object, e As EventArgs) Handles MineLabel.Click
+    Private Sub ChangeOrderButton_Click(sender As Object, e As EventArgs) Handles ChangeOrderButton.Click
+        ListBoxNom.Sorted = False
+        ListBoxMines.Sorted = False
+        ListBoxTime.Sorted = False
+        ListBoxNbGame.Sorted = False
+        ListBoxCumul.Sorted = False
 
+        Dim items1() As Object = ListBoxNom.Items.Cast(Of Object).Reverse.ToArray
+        ListBoxNom.Items.Clear()
+        ListBoxNom.Items.AddRange(items1)
+
+        Dim items2() As Object = ListBoxMines.Items.Cast(Of Object).Reverse.ToArray
+        ListBoxMines.Items.Clear()
+        ListBoxMines.Items.AddRange(items2)
+
+        Dim items3() As Object = ListBoxTime.Items.Cast(Of Object).Reverse.ToArray
+        ListBoxTime.Items.Clear()
+        ListBoxTime.Items.AddRange(items3)
+
+        Dim items4() As Object = ListBoxNbGame.Items.Cast(Of Object).Reverse.ToArray
+        ListBoxNbGame.Items.Clear()
+        ListBoxNbGame.Items.AddRange(items4)
+
+        Dim items5() As Object = ListBoxCumul.Items.Cast(Of Object).Reverse.ToArray
+        ListBoxCumul.Items.Clear()
+        ListBoxCumul.Items.AddRange(items5)
     End Sub
 End Class

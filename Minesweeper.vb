@@ -15,6 +15,9 @@ Public Class Minesweeper
         LayoutPanel.Visible = False
         If getStateOfGame() = True Then
             Accueil.Show()
+        ElseIf partieGagne(nbMines) = True Then
+            MsgBox("Partie gagné, bravo !")
+            Accueil.Show()
         Else
             If MsgBox("Voulez-vous vraiment quitter la partie ?", MsgBoxStyle.YesNo, "Fermeture du programme") = MsgBoxResult.No Then
                 e.Cancel = True
@@ -75,6 +78,7 @@ Public Class Minesweeper
                 Dim newBtn As Button = New Button
                 newBtn.Width = cellHeightWidth
                 newBtn.Height = cellHeightWidth
+                newBtn.BackColor = Color.WhiteSmoke
                 AddHandler newBtn.MouseDown, AddressOf ClicOnBtn
                 LayoutPanel.Controls.Add(newBtn, i, j)
             Next
@@ -111,6 +115,7 @@ Public Class Minesweeper
             Dim row = LayoutPanel.GetRow(sender)
             Dim col = LayoutPanel.GetColumn(sender)
             If isAMine(row, col) = True Then
+                Timer1.Stop()
                 sender.BackColor = Color.Red
                 Dim file As New StreamReader("config.txt")
                 file.ReadLine()
@@ -199,6 +204,7 @@ Public Class Minesweeper
 
         ElseIf e.Button = Button.MouseButtons.Right Then
             If partieGagne(nbMines) = True Then
+                Timer1.Stop()
                 Dim file As New StreamReader("config.txt")
                 file.ReadLine()
                 file.ReadLine()

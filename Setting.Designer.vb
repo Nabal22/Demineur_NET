@@ -131,13 +131,14 @@ Partial Class Setting
         '
         'ValidAndQuitButton
         '
+        Me.ValidAndQuitButton.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ValidAndQuitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ValidAndQuitButton.Location = New System.Drawing.Point(108, 328)
         Me.ValidAndQuitButton.Name = "ValidAndQuitButton"
         Me.ValidAndQuitButton.Size = New System.Drawing.Size(339, 51)
         Me.ValidAndQuitButton.TabIndex = 9
         Me.ValidAndQuitButton.Text = "Valider et Quitter"
-        Me.ValidAndQuitButton.UseVisualStyleBackColor = True
+        Me.ValidAndQuitButton.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -258,7 +259,7 @@ Partial Class Setting
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 1)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(34, 41)
         Me.PictureBox1.TabIndex = 15
@@ -268,6 +269,7 @@ Partial Class Setting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(563, 401)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -282,6 +284,7 @@ Partial Class Setting
         Me.Controls.Add(Me.TimeLabel)
         Me.Controls.Add(Me.ScrollBar_Time)
         Me.Controls.Add(Me.TableSizeLabel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Setting"
         Me.Text = "Setting"
         Me.GroupBoxChoixGrille.ResumeLayout(False)
