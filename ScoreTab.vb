@@ -1,6 +1,4 @@
-﻿Imports System.IO
-
-Public Class ScoreTab
+﻿Public Class ScoreTab
     Private tabNom As New List(Of String)
     Private tabMines As New List(Of String)
     Private tabTime As New List(Of String)

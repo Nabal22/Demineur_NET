@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="9a6e9a1a-08bd-4022-85f5-f78bc2fae869" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="13495141-e666-45b1-a2ad-e79df09f49bc" name="Demineur_NET">
+      <childLayers>
+        <layer Id="f4347e5c-080e-4468-9e66-dd3b33ded0ca" name="Minesweeper">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="e5bb9d6c-4b20-4bd1-b689-656d40f71e8d" direction="Forward">
+              <layerMoniker Id="d6d5fa18-1767-4ce8-ab1b-d5955b9c5cea" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="c5cdf2da-448c-4faa-9899-0f4c5ef9ea75" name="Minesweeper">
+              <ArtifactNode Label="Minesweeper" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=Minesweeper)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=Minesweeper)" Label="Minesweeper" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="1ff34265-de47-48b3-a7c0-ae2d36872271" name="Accueil">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="b2617ac0-c994-4545-ac81-c96c975f1e07" direction="Forward">
+              <layerMoniker Id="2230e4c4-8f9b-4c18-af26-2e5d3fc141a3" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="2c4128c8-99d4-4ffd-b580-1af407adf079" direction="Bidirectional">
+              <layerMoniker Id="650218c4-0eb3-4986-9d8c-cebf2e4223c7" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="691348d5-1a1b-4196-94d7-2f0243a167dc" direction="Bidirectional">
+              <layerMoniker Id="f4347e5c-080e-4468-9e66-dd3b33ded0ca" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="ebf8da1c-e678-4d55-9430-38851ca91b48" direction="Forward">
+              <layerMoniker Id="64b77c92-2b97-4aa7-ade8-e34925703af1" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="a25cae9d-c24a-4c45-a2b3-52d6e328e471" direction="Forward">
+              <layerMoniker Id="d6d5fa18-1767-4ce8-ab1b-d5955b9c5cea" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="fff98360-25e1-4ae9-9a9f-05ae6e4449ef" name="Accueil">
+              <ArtifactNode Label="Accueil" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=Accueil)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=Accueil)" Label="Accueil" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="d6d5fa18-1767-4ce8-ab1b-d5955b9c5cea" name="Game">
+          <references>
+            <reference Id="731b42f2-4061-48b5-afd2-429733e34f56" name="Game">
+              <ArtifactNode Label="Game" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=Game)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=Game)" Label="Game" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="650218c4-0eb3-4986-9d8c-cebf2e4223c7" name="Setting">
+          <references>
+            <reference Id="90b8fd41-f233-465a-9eb2-8a396bd64859" name="Setting">
+              <ArtifactNode Label="Setting" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=Setting)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=Setting)" Label="Setting" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="64b77c92-2b97-4aa7-ade8-e34925703af1" name="ScoreTab">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="d4837fcc-985f-4cba-8fc7-3c18afed96a3" direction="Forward">
+              <layerMoniker Id="2d66a9bb-815b-4046-8f34-3d4ac2f181ed" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="fa9db762-6c7d-4460-baa6-214edffd99a8" direction="Forward">
+              <layerMoniker Id="b0f35a32-5162-446b-8ef1-12f5ac743a96" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="668ada92-50b5-46b6-ba91-5a391542431f" name="ScoreTab">
+              <ArtifactNode Label="ScoreTab" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=ScoreTab)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=ScoreTab)" Label="ScoreTab" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="2d66a9bb-815b-4046-8f34-3d4ac2f181ed" name="Joueur">
+          <references>
+            <reference Id="2571b7fd-4a58-4850-af0a-11c27264ff01" name="Joueur">
+              <ArtifactNode Label="Joueur" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=Joueur)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=Joueur)" Label="Joueur" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="b0f35a32-5162-446b-8ef1-12f5ac743a96" name="Score">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="e701200e-b3da-4e53-a809-4c03a0deb7f8" direction="Forward">
+              <layerMoniker Id="2d66a9bb-815b-4046-8f34-3d4ac2f181ed" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="2ed27715-e07c-4aac-96e9-2a2330d7e27f" name="Score">
+              <ArtifactNode Label="Score" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=Score)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=Score)" Label="Score" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="2230e4c4-8f9b-4c18-af26-2e5d3fc141a3" name="Information">
+          <references>
+            <reference Id="7f9161d2-c77e-44ea-87de-a0bcbcb65e79" name="Information">
+              <ArtifactNode Label="Information" Category="CodeSchema_Class" Id="(Assembly=../bin/Debug/Demineur_NET.exe Namespace=Demineur_NET Type=Information)" />
+              <ExpandedNode Id="(Assembly=Demineur_NET Namespace=Demineur_NET Type=Information)" Label="Information" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="5738084f-b645-4d3c-bcb0-20b2c4d241ec" name="Demineur_NET">
+          <ArtifactNode Label="Demineur_NET" Category="CodeSchema_Namespace" Id="(Namespace=Demineur_NET)" />
+          <ExpandedNode Id="(Namespace=Demineur_NET)" Label="Demineur_NET" Category="CodeSchema_Namespace">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Demineur_NET", "Demineur_NET.vbproj", "{AC83D7EB-5407-485E-BAF7-91C8901485DE}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DependencyValidation1", "DependencyValidation1\DependencyValidation1.modelproj", "{40BAAF03-DCFE-4FEC-B1E5-876672D095E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AC83D7EB-5407-485E-BAF7-91C8901485DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC83D7EB-5407-485E-BAF7-91C8901485DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC83D7EB-5407-485E-BAF7-91C8901485DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40BAAF03-DCFE-4FEC-B1E5-876672D095E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40BAAF03-DCFE-4FEC-B1E5-876672D095E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40BAAF03-DCFE-4FEC-B1E5-876672D095E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40BAAF03-DCFE-4FEC-B1E5-876672D095E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

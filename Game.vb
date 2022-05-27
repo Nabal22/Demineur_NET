@@ -1,7 +1,4 @@
-﻿Imports System.IO
-Imports System.Text
-
-Module Game
+﻿Module Game
 
     Dim tab(,) As Boolean
     Dim drapeau(,) As Boolean
@@ -42,7 +39,7 @@ Module Game
         For i As Integer = 0 To dimTab
             For j As Integer = 0 To dimTab
                 If tab.GetValue(i, j) = True And drapeau.GetValue(i, j) = True Then
-                    estMarque+=1
+                    estMarque += 1
                 End If
             Next
         Next
