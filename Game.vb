@@ -1,9 +1,9 @@
 ﻿Module Game
 
-    Dim tab(,) As Boolean
-    Dim drapeau(,) As Boolean
-    Dim dimTab As Integer
-    Dim sombre As Boolean
+    Private tab(,) As Boolean
+    Private drapeau(,) As Boolean
+    Private dimTab As Integer
+    Private sombre As Boolean = False
 
     Dim gameAsEnded As Boolean = False
     Sub Init(dimRowAndCollumn As Integer, nbMines As Integer)

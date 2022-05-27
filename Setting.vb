@@ -51,8 +51,26 @@ Public Class Setting
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub Clair()
+        Me.BackColor = Color.Gainsboro
+        Me.ValidAndQuitButton.BackColor = SystemColors.ControlLightLight
+        Me.ValidAndQuitButton.ForeColor = Color.Black
+    End Sub
 
+    Private Sub Sombre()
+        Me.BackColor = SystemColors.ControlDarkDark
+        Me.ValidAndQuitButton.BackColor = SystemColors.ControlDark
+        Me.ValidAndQuitButton.ForeColor = Color.White
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If getSombre() = True Then
+            Clair()
+            setSombre(False)
+        Else
+            Sombre()
+            setSombre(True)
+        End If
     End Sub
 
     Private Sub Lvl1RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles Lvl1RadioButton.CheckedChanged, Lvl2RadioButton.CheckedChanged, Lvl3RadioButton.CheckedChanged, Lvl4RadioButton.CheckedChanged, Lvl5RadioButton.CheckedChanged
@@ -117,7 +135,12 @@ Public Class Setting
         ScrollBar_MineValue.Value = file.ReadLine
         ScrollBar_Time.Value = file.ReadLine
         file.Close()
-        '' faire la partie timer
+
+        If getSombre() = False Then
+            Clair()
+        Else
+            Sombre()
+        End If
 
     End Sub
 End Class

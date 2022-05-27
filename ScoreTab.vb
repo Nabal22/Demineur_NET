@@ -37,12 +37,52 @@
             End If
             tabCumul.Add(cumul)
         Next
-        Accueil.Show()
         ListBoxNom.Sorted = True
         ListBoxMines.Sorted = True
         ListBoxTime.Sorted = True
         ListBoxNbGame.Sorted = True
         ListBoxCumul.Sorted = True
+        If getSombre() = False Then
+            Clair()
+        Else
+            Sombre()
+        End If
+    End Sub
+
+    Private Sub Clair()
+        Me.BackColor = Color.Gainsboro
+        Me.SearchButton.BackColor = SystemColors.ControlLightLight
+        Me.SearchButton.ForeColor = Color.Black
+        Me.ChangeOrderButton.BackColor = SystemColors.ControlLightLight
+        Me.ChangeOrderButton.ForeColor = Color.Black
+        Me.ListBoxNom.BackColor = SystemColors.ControlLightLight
+        Me.ListBoxMines.BackColor = SystemColors.ControlLightLight
+        Me.ListBoxNbGame.BackColor = SystemColors.ControlLightLight
+        Me.ListBoxCumul.BackColor = SystemColors.ControlLightLight
+        Me.ListBoxTime.BackColor = SystemColors.ControlLightLight
+    End Sub
+
+    Private Sub Sombre()
+        Me.BackColor = SystemColors.ControlDarkDark
+        Me.SearchButton.BackColor = SystemColors.ControlDark
+        Me.SearchButton.ForeColor = Color.White
+        Me.ChangeOrderButton.BackColor = SystemColors.ControlDark
+        Me.ChangeOrderButton.ForeColor = Color.White
+        Me.ListBoxNom.BackColor = SystemColors.ControlDark
+        Me.ListBoxMines.BackColor = SystemColors.ControlDark
+        Me.ListBoxCumul.BackColor = SystemColors.ControlDark
+        Me.ListBoxNbGame.BackColor = SystemColors.ControlDark
+        Me.ListBoxTime.BackColor = SystemColors.ControlDark
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If getSombre() = True Then
+            Clair()
+            setSombre(False)
+        Else
+            Sombre()
+            setSombre(True)
+        End If
     End Sub
 
     Private Sub SelectIndexChange(sender As Object, e As EventArgs) Handles ListBoxNom.SelectedIndexChanged, ListBoxMines.SelectedIndexChanged, ListBoxTime.SelectedIndexChanged
@@ -148,5 +188,9 @@
         Dim items5() As Object = ListBoxCumul.Items.Cast(Of Object).Reverse.ToArray
         ListBoxCumul.Items.Clear()
         ListBoxCumul.Items.AddRange(items5)
+    End Sub
+
+    Private Sub ScoreTab_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Accueil.show()
     End Sub
 End Class

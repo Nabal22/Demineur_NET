@@ -39,6 +39,32 @@ Public Class Minesweeper
         Me.Close()
     End Sub
 
+    Private Sub Clair()
+        Me.BackColor = Color.Gainsboro
+        Me.LeaveButton.BackColor = SystemColors.ControlLightLight
+        Me.LeaveButton.ForeColor = Color.Black
+        Me.PauseButton.BackColor = SystemColors.ControlLightLight
+        Me.PauseButton.ForeColor = Color.Black
+    End Sub
+
+    Private Sub Sombre()
+        Me.BackColor = SystemColors.ControlDarkDark
+        Me.LeaveButton.BackColor = SystemColors.ControlDark
+        Me.LeaveButton.ForeColor = Color.White
+        Me.PauseButton.BackColor = SystemColors.ControlDark
+        Me.PauseButton.ForeColor = Color.White
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If getSombre() = True Then
+            Clair()
+            setSombre(False)
+        Else
+            sombre()
+            setSombre(True)
+        End If
+    End Sub
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If estPause = False Then
             timePause += 1
@@ -86,6 +112,11 @@ Public Class Minesweeper
         temps = file.ReadLine()
 
         file.Close()
+        If getSombre() = False Then
+            Clair()
+        Else
+            Sombre()
+        End If
     End Sub
 
     Function getNbCaseDiscovered() As Integer
