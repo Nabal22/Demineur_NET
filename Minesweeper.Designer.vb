@@ -70,7 +70,7 @@ Partial Class Minesweeper
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
-        Me.NameLabel.Location = New System.Drawing.Point(51, 28)
+        Me.NameLabel.Location = New System.Drawing.Point(73, 28)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(39, 13)
         Me.NameLabel.TabIndex = 1
@@ -89,7 +89,7 @@ Partial Class Minesweeper
         'TimeLabel
         '
         Me.TimeLabel.AutoSize = True
-        Me.TimeLabel.Location = New System.Drawing.Point(150, 28)
+        Me.TimeLabel.Location = New System.Drawing.Point(162, 28)
         Me.TimeLabel.Name = "TimeLabel"
         Me.TimeLabel.Size = New System.Drawing.Size(39, 13)
         Me.TimeLabel.TabIndex = 3
@@ -98,7 +98,7 @@ Partial Class Minesweeper
         'PauseButton
         '
         Me.PauseButton.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.PauseButton.Location = New System.Drawing.Point(528, 18)
+        Me.PauseButton.Location = New System.Drawing.Point(481, 18)
         Me.PauseButton.Name = "PauseButton"
         Me.PauseButton.Size = New System.Drawing.Size(75, 23)
         Me.PauseButton.TabIndex = 5

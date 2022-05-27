@@ -131,15 +131,29 @@ Public Class Minesweeper
             ElseIf sender.Visible = True Then
                 sender.visible = False
                 Dim mineAroundClick As Integer = mineAround(row, col)
+                Dim newLabel As New Label()
+                newLabel.Height = cellHeightWidth
+                newLabel.Width = cellHeightWidth
+                newLabel.AutoSize = False
+                newLabel.Margin = New Padding(5)
+                newLabel.BackColor = Color.LightGray
+                newLabel.Font = New Font(newLabel.Font, FontStyle.Bold)
+                LayoutPanel.Controls.Add(newLabel, col, row)
                 If (mineAroundClick > 0) Then
-                    Dim newLabel As New Label()
-                    newLabel.Text = mineAroundClick
-                    newLabel.Height = cellHeightWidth
-                    newLabel.Width = cellHeightWidth
-                    newLabel.AutoSize = False
+                    Select Case mineAroundClick
+                        Case 1
+                            newLabel.ForeColor = Color.Blue
+                        Case 2
+                            newLabel.ForeColor = Color.Green
+                        Case 3
+                            newLabel.ForeColor = Color.DarkRed
+                        Case 4
+                            newLabel.ForeColor = Color.DarkBlue
+                    End Select
                     newLabel.TextAlign = ContentAlignment.MiddleCenter
-                    LayoutPanel.Controls.Add(newLabel, col, row)
+                    newLabel.Text = mineAroundClick
                 Else
+                    newLabel.Text = " "
                     ''coin en haut a droite
                     If (row = 0 And col = dimRowAndCollumn - 1) Then
                         ClicOnBtn(LayoutPanel.Controls.Item(left), e)
