@@ -60,7 +60,7 @@ Public Class Accueil
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Information.Show()
-
+        Me.Hide()
     End Sub
 
     Private Sub Sombre()
