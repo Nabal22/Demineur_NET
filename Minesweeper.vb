@@ -16,7 +16,6 @@ Public Class Minesweeper
         If getStateOfGame() = True Then
             Accueil.Show()
         ElseIf partieGagne(nbMines) = True Then
-            MsgBox("Partie gagné, bravo !")
             Accueil.Show()
         Else
             If MsgBox("Voulez-vous vraiment quitter la partie ?", MsgBoxStyle.YesNo, "Fermeture du programme") = MsgBoxResult.No Then
@@ -55,9 +54,9 @@ Public Class Minesweeper
             file.ReadLine()
             file.ReadLine()
             saveScore(NameLabel.Text, getNbCaseDiscovered(), file.ReadLine() - TimeLabel.Text)
+            notifer(False)
             file.Close()
             setStateOfGame(True)
-            MsgBox("temps écoulé")
             Me.Close()
         End If
     End Sub
@@ -122,8 +121,8 @@ Public Class Minesweeper
                 file.ReadLine()
                 file.ReadLine()
                 saveScore(NameLabel.Text, getNbCaseDiscovered(), file.ReadLine() - TimeLabel.Text)
+                notifer(False)
                 file.Close()
-                MsgBox("C'était une mine, la partie est finie")
                 setStateOfGame(True)
                 Me.Close()
             ElseIf isADrapeau(row, col) = True Then
@@ -224,6 +223,7 @@ Public Class Minesweeper
                 file.ReadLine()
                 file.ReadLine()
                 saveScore(NameLabel.Text, getNbCaseDiscovered(), file.ReadLine() - TimeLabel.Text)
+                notifer(True)
                 file.Close()
                 Me.Close()
             Else
@@ -254,4 +254,23 @@ Public Class Minesweeper
         End If
 
     End Sub
+
+    Private Sub notifer(estGagneé As Boolean)
+        Dim file As New StreamReader("config.txt")
+        file.ReadLine()
+        file.ReadLine()
+        file.ReadLine()
+
+        If estGagneé Then
+            MsgBox("Bravo, tu as gagné la partie !" & vbCrLf &
+                   " Nombre de cases découvertes : " & getNbCaseDiscovered() & vbCrLf &
+                   " Temps écoulé : " & file.ReadLine() - TimeLabel.Text)
+        Else
+            MsgBox("Dommage, tu as perdu la partie !" & vbCrLf &
+                   " Nombre de cases découvertes : " & getNbCaseDiscovered() & vbCrLf &
+                   " Temps écoulé : " & file.ReadLine() - TimeLabel.Text)
+        End If
+        file.Close()
+    End Sub
+
 End Class

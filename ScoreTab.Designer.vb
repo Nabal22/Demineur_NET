@@ -172,7 +172,7 @@ Partial Class ScoreTab
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gainsboro
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 315)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ListBoxCumul)
         Me.Controls.Add(Me.LabelCumul)

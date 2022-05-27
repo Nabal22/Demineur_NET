@@ -263,6 +263,4 @@
         Return nbMinesAround
     End Function
 
-
-
 End Module
